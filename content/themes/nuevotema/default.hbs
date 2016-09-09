@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+    {{!-- icon  --}}
+    <link rel="shortcut icon" href="{{asset "img/icon.png"}}">
+    <link rel="icon" sizes="192x192" href="{{asset "img/icon.png"}}" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500|Fira+Mono' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{{asset "css/main.css"}}" />
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+</head>
+<body>
+    <div class="mapache">
+        {{!-- Add Header --}}
+        {{> "header"}}
+        {{!-- Add Content Body --}}
+        {{{body}}}
+        {{!-- Add footer --}}
+        {{> "footer"}}
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+    <div class="overlay hide-after-lg"></div>
+    <script src="{{asset "js/bundle.min.js"}}"></script>
+    <!-- SDK Facebook -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.6&appId=302430823285176";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+</body>
+</html>

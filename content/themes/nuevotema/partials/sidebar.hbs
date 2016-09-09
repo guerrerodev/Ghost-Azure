@@ -1,0 +1,23 @@
+{{!-- Sidebar right --}}
+<div id="sidebar" class="col-gd-right sidebar hide-before-lg">
+
+    {{#get "posts" filter="featured:true" limit="5" as |featured|}}
+        {{> "widget-featured" widgetTitle="Recomendados" widgetPosts=featured}}
+    {{/get}}
+
+    {{!-- Add your content here --}}
+
+    <!-- Newsletter -->
+    <div class="widget">
+    <div class="title-primary">Suscríbete a Daniel Guerrero</div>
+        {{> widget-newsletter-lateral}}
+    </div>
+
+    <!-- Widget Twitter -->
+    {{> widget-twitter}}
+
+    <!-- Widget Facebook -->
+    {{> widget-facebook}}
+
+</div>
+</div>
